@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <script
+      src="https://kit.fontawesome.com/6b7d429c30.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="image">
+          <img
+            src="https://evbtraining.de/wp-content/uploads/2021/03/evblogo.png"
+            alt=""
+          />
+        </div>
+        <h2>Login</h2>
+        <div class="wrapper_credentials">
+          <div class="username">
+            <label for="user">Username</label> <br />
+            <input type="text" placeholder="" id="username" />
+          </div>
+          <div class="password">
+            <label for="password">Password</label> <br />
+            <input type="password" placeholder="" id="password" />
+          </div>
+          <div class="loginButton">
+            <button id="login" onclick="getLogin()">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+      const evbStudents = [
+        {
+          username: "metehan",
+          password: "123456",
+          teacher: true,
+        },
+
+        {
+          username: "eman",
+          password: "2022",
+          teacher: false,
+        },
+        {
+          username: "kok",
+          password: "alperen",
+          teacher: false,
+        },
+        {
+          username: "ertosun",
+          password: "9876",
+          teacher: false,
+        },
+
+        {
+          username: "ulga",
+          password: "abc123",
+          teacher: false,
+        },
+        {
+          username: "sakalli",
+          password: "0633",
+          teacher: false,
+        },
+        {
+          username: "konuskan",
+          password: "445414",
+          teacher: false,
+        },
+      ];
+
+      // console.log(evbStudents);
+
+      function getLogin() {
+        var userInput = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        for (i = 0; i < evbStudents.length; i++) {
+          // var allStudents = evbStudents[i];
+          // console.log(allStudents);
+          if (
+            userInput == evbStudents[i].username &&
+            password == evbStudents[i].password
+          ) {
+            console.log("user logged in");
+            return; // eger bilgiler dogruysa return donhuyu bitirir
+          } else {
+            console.log("Incorrect");
+            return;
+          }
+        }
+      }
+
+      // getLogin();
+    </script>
+  </body>
+</html>
